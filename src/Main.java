@@ -1,9 +1,8 @@
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
+
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args, Objects texto, Objects palavra) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
             int comandoMenu, iniciar, contCadastro=0, contAlunos = 1;
             ArrayList<Integer> matriculaAluno = new ArrayList<Integer>();
@@ -26,11 +25,14 @@ public class Main {
                             ConsultarMatricula.consultaMatricula(nomeAlunos, matriculaAluno, enderecoAluno, contAlunos);
                             break;
                             case 3:
+                                Atualizaraluno.atualizarAluno(nomeAlunos, matriculaAluno, enderecoAluno, contAlunos);
                                 break;
                                 case 4:
+                                    DeletarAluno.deletarAluno(nomeAlunos, matriculaAluno, enderecoAluno, contAlunos);
                                     break;
                     default:
-
+                        System.out.println("Opcão não encontrada tente novamente!");
+                        sair = false;
                 }
             }
         }
